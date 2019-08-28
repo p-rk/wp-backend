@@ -1,0 +1,51 @@
+{
+  "name": "whitepanda",
+  "version": "0.0.1",
+  "description": "email and mobile login system",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -r esm --ignore '*.json'",
+    "start": "NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-rk/wp-backend.git"
+  },
+  "keywords": [
+    "login system",
+    "email login",
+    "mobile login"
+  ],
+  "author": "p-rk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-rk/wp-backend/issues"
+  },
+  "homepage": "https://github.com/p-rk/wp-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "core-js": "^3.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-routes-mapper": "^1.1.0",
+    "helmet": "^3.20.0",
+    "ioredis": "^4.14.0",
+    "md5": "^2.2.1",
+    "mysql2": "^1.6.5",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.3.0",
+    "sequelize": "^5.16.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.1"
+  }
+}
