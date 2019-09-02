@@ -61,14 +61,14 @@ const User = DB.define('User', {
 /* eslint-disable-next-line */
 User.prototype.toJSON = function () {
   const {
-    id, uuid, username, email, is_email_verified: isEmailVerified, is_mobile_verified: isMobileVerified,
+    id, uuid, mobile, email, is_email_verified: isEmailVerified, is_mobile_verified: isMobileVerified,
   } = this.get();
   return {
     id,
     uuid,
     isEmailVerified,
     isMobileVerified,
-    username,
+    mobile,
     email,
   };
 };
