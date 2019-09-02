@@ -58,8 +58,7 @@ const UserController = () => {
         return res.status(400).json({ msg: 'User not found. Please register.' });
       }
       const otp = Math.floor(Math.random() * 90000) + 10000;
-      const isOTPSent = await sendOtp(mobile, otp);
-      if (!isOTPSent) return res.status(503).json({ msg: 'Error while sending SMS to mobile number. Contact us.' });
+      await sendOtp(mobile, otp);
       return res.status(200).json({ msg: `OTP has been sent to ${mobile}` });
     }
     return res.status(400).json({ msg: 'Invalid Mobile Number.' });
