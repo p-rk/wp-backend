@@ -13,7 +13,7 @@ const UserController = () => {
         await Users.create(req.body, {
           fileds: ['mobile', 'email', 'password'],
         });
-        return res.status(200).json({ status: 'registered' });
+        return res.status(200).json({ msg: 'You\'ve registered successfully. You can login.' });
       } catch (err) {
         if (err.errors && err.errors.length > 0) {
           const errors = err.errors.map((er) => er.message);
@@ -70,7 +70,7 @@ const UserController = () => {
     if (mobile && otp) {
       /* check redis for mobile number */
       const otpInCache = await redis.get(mobile);
-      if (!otpInCache) return res.status(400).json({ msg: 'OTP expired or not found. Please regenerate OTP again.' });
+      if (!otpInCache) return res.status(400).json({ msg: 'OTP expired or not found. Request OTP again' });
       if (Number(otp) === Number(otpInCache)) {
         /* async update user mobile as verified */
         await Users.update({
